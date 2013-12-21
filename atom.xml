@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://jebai.github.io/atom.xml" rel="self"/>
+  <link href="http://jebai.github.io/"/>
+  <updated>2013-12-21T13:19:35+08:00</updated>
+  <id>http://jebai.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[iOS 修改编译输出目录]]></title>
+    <link href="http://jebai.github.io/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/"/>
+    <updated>2013-12-21T12:52:52+08:00</updated>
+    <id>http://jebai.github.io/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu</id>
+    <content type="html"><![CDATA[<p>XCode5中默认的工程编译输出目录是 ~/Library/Developer/Xcode/DerivedData。</p>
+
+<p>可以根据需要改变设置，使像静态库这样的编译输出文件可以方便的被找到。</p>
+
+<p>1、在Xcode菜单中按如下路径打开对话框：</p>
+
+<p>XCode->Preferences->Locations</p>
+
+<p>2、点击DerivedData的高级设置选项</p>
+
+<p><img src="images/2013/12/21/xcode1.jpg" title="Optional title attribute" alt="Alt text" /></p>
+
+<p>3、将BuildLocation设置为Legacy</p>
+
+<p><img src="images/2013/12/21/xcode2.jpg" title="Optional title attribute" alt="Alt text" /></p>
+
+<p>4、这样编译出来的静态库就会在工程的SRCROOT对应的目录下生成一个build目录，</p>
+
+<p><img src="images/2013/12/21/xcode2.jpg" title="Optional title attribute" alt="Alt text" /></p>
+]]></content>
+  </entry>
+  
+</feed>
