@@ -5,13 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - My Octopress Blog</title>
+  <title>用octopress构建个人博客 - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content=" Blog Archive 2013 iOS 修改编译输出目录
-Dec 21 2013 用octopress构建个人博客
-Nov 14 2013 Recent Posts iOS 修改编译输出目录 用octopress构建个人博客 ">
+  <meta name="description" content="1. 下载Octopress 在准备存放仓库的目录将octopress代码下载下来&lt;br/&gt;
+`git clone git://github.com/imathis/octopress.git octopress` 2. 安装依赖的组件 cd octopress
+gem install &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@ Nov 14 2013 Recent Posts iOS 修改编译输出目录 用octopress构建个人�
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jebai.github.io/blog/archives">
+  <link rel="canonical" href="http://jebai.github.io/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
@@ -66,41 +66,141 @@ Nov 14 2013 Recent Posts iOS 修改编译输出目录 用octopress构建个人�
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">用octopress构建个人博客</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-14T08:45:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><h4>1. 下载Octopress</h4>
 
-  
-  <h2>2013</h2>
+<pre><code>在准备存放仓库的目录将octopress代码下载下来&lt;br/&gt;
+`git clone git://github.com/imathis/octopress.git octopress`
+</code></pre>
 
-<article>
-  
-<h1><a href="/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/">iOS 修改编译输出目录</a></h1>
-<time datetime="2013-12-21T12:52:52+08:00" pubdate><span class='month'>Dec</span> <span class='day'>21</span> <span class='year'>2013</span></time>
+<h4>2. 安装依赖的组件</h4>
 
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">用octopress构建个人博客</a></h1>
-<time datetime="2013-11-14T08:45:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>14</span> <span class='year'>2013</span></time>
+<ul>
+<li><code>cd octopress</code></li>
+<li><code>gem install bundler</code>.
+  <a href="http://bundler.io/">了解bundler</a></li>
+<li><code>rbenv rehash</code>
+<a href="https://github.com/sstephenson/rbenv">了解rbenv</a></li>
+<li><code>bundle install</code></li>
+</ul>
 
 
-</article>
+<h4>3. 安装默认的样式</h4>
 
+<ul>
+<li><code>rake install</code><a href="http://rake.rubyforge.org/">了解rake</a></li>
+</ul>
+
+
+<h4>4. 在github上新建仓库</h4>
+
+<pre><code>仓库需要命名为 username.github.io.
+username要跟github用户名相同
+</code></pre>
+
+<h4>5. 在本地新建站点，同时部署站点的github信息</h4>
+
+<pre><code>`rake setup_github_pages`
+</code></pre>
+
+<h4>6. 生成站点</h4>
+
+<pre><code>`rake generate`
+</code></pre>
+
+<h4>7. 创建一篇文章</h4>
+
+<pre><code>`rake new_post["first blog"]
+这样会在source/_post目录下面创建一编文章，时间开头，md结尾，Mac下可以用mou来编辑md文件。`
+</code></pre>
+
+<p><a href="http://mouapp.com/">了解mou</a></p>
+
+<h4>8. 本地预览站点</h4>
+
+<pre><code>`rake preview`
+而后即可在浏览器中访问 http://0.0.0.0:4000
+</code></pre>
+
+<h4>9. 部署站点</h4>
+
+<pre><code>`rake deploy`
+</code></pre>
+
+<h4>10. 访问站点</h4>
+
+<pre><code>http://username.github.io
+</code></pre>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-14T08:45:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jebai.github.io/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/" data-via="" data-counturl="http://jebai.github.io/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/" title="Next Post: iOS 修改编译输出目录">iOS 修改编译输出目录 &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>

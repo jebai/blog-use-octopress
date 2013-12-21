@@ -104,15 +104,114 @@
 
 <p>2、点击DerivedData的高级设置选项</p>
 
-<p><img src="images/2013/12/21/xcode1.jpg" title="Optional title attribute" alt="Alt text" /></p>
+<p><img src="/images/2013/12/21/xcode1.jpg" title="Optional title attribute" alt="Alt text" /></p>
 
 <p>3、将BuildLocation设置为Legacy</p>
 
-<p><img src="images/2013/12/21/xcode2.jpg" title="Optional title attribute" alt="Alt text" /></p>
+<p><img src="/images/2013/12/21/xcode2.jpg" title="Optional title attribute" alt="Alt text" /></p>
 
 <p>4、这样编译出来的静态库就会在工程的SRCROOT对应的目录下生成一个build目录，</p>
 
-<p><img src="images/2013/12/21/xcode3.jpg" title="Optional title attribute" alt="Alt text" /></p>
+<p><img src="/images/2013/12/21/xcode3.jpg" title="Optional title attribute" alt="Alt text" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">用octopress构建个人博客</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-14T08:45:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h4>1. 下载Octopress</h4>
+
+<pre><code>在准备存放仓库的目录将octopress代码下载下来&lt;br/&gt;
+`git clone git://github.com/imathis/octopress.git octopress`
+</code></pre>
+
+<h4>2. 安装依赖的组件</h4>
+
+<ul>
+<li><code>cd octopress</code></li>
+<li><code>gem install bundler</code>.
+  <a href="http://bundler.io/">了解bundler</a></li>
+<li><code>rbenv rehash</code>
+<a href="https://github.com/sstephenson/rbenv">了解rbenv</a></li>
+<li><code>bundle install</code></li>
+</ul>
+
+
+<h4>3. 安装默认的样式</h4>
+
+<ul>
+<li><code>rake install</code><a href="http://rake.rubyforge.org/">了解rake</a></li>
+</ul>
+
+
+<h4>4. 在github上新建仓库</h4>
+
+<pre><code>仓库需要命名为 username.github.io.
+username要跟github用户名相同
+</code></pre>
+
+<h4>5. 在本地新建站点，同时部署站点的github信息</h4>
+
+<pre><code>`rake setup_github_pages`
+</code></pre>
+
+<h4>6. 生成站点</h4>
+
+<pre><code>`rake generate`
+</code></pre>
+
+<h4>7. 创建一篇文章</h4>
+
+<pre><code>`rake new_post["first blog"]
+这样会在source/_post目录下面创建一编文章，时间开头，md结尾，Mac下可以用mou来编辑md文件。`
+</code></pre>
+
+<p><a href="http://mouapp.com/">了解mou</a></p>
+
+<h4>8. 本地预览站点</h4>
+
+<pre><code>`rake preview`
+而后即可在浏览器中访问 http://0.0.0.0:4000
+</code></pre>
+
+<h4>9. 部署站点</h4>
+
+<pre><code>`rake deploy`
+</code></pre>
+
+<h4>10. 访问站点</h4>
+
+<pre><code>http://username.github.io
+</code></pre>
 </div>
   
   
@@ -134,6 +233,10 @@
     
       <li class="post">
         <a href="/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/">iOS 修改编译输出目录</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">用octopress构建个人博客</a>
       </li>
     
   </ul>

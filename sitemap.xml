@@ -1,16 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://jebai.github.io/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/</loc>
+        <lastmod>2013-12-21T14:00:54+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://jebai.github.io/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/</loc>
-        <lastmod>2013-12-21T13:40:45+08:00</lastmod>
+        <lastmod>2013-12-21T13:50:13+08:00</lastmod>
     </url>
     <url>
         <loc>http://jebai.github.io/blog/archives/</loc>
-        <lastmod>2013-12-21T13:40:45+08:00</lastmod>
+        <lastmod>2013-12-21T14:00:54+08:00</lastmod>
     </url>
     <url>
         <loc>http://jebai.github.io/</loc>
-        <lastmod>2013-12-21T13:40:45+08:00</lastmod>
+        <lastmod>2013-12-21T14:00:54+08:00</lastmod>
     </url>
     <url>
         <loc>http://jebai.github.io/robots.txt</loc>
