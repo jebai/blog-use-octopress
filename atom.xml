@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://jebai.github.io/atom.xml" rel="self"/>
   <link href="http://jebai.github.io/"/>
-  <updated>2013-12-21T13:19:35+08:00</updated>
+  <updated>2013-12-21T13:40:45+08:00</updated>
   <id>http://jebai.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -36,7 +36,7 @@
 
 <p>4、这样编译出来的静态库就会在工程的SRCROOT对应的目录下生成一个build目录，</p>
 
-<p><img src="images/2013/12/21/xcode2.jpg" title="Optional title attribute" alt="Alt text" /></p>
+<p><img src="images/2013/12/21/xcode3.jpg" title="Optional title attribute" alt="Alt text" /></p>
 ]]></content>
   </entry>
   
