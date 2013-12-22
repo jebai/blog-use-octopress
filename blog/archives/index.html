@@ -10,10 +10,8 @@
 
   
   <meta name="description" content="Blog Archive 2013 iOS 修改编译输出目录
-Dec 21 2013 博客定制思考
-Nov 14 2013 用octopress构建个人博客
-Nov 14 2013 我为什么写博客
-Nov 13 2013 Recent Posts iOS 修改编译输出目录 博客定制思考 &hellip;">
+Dec 21 2013 用octopress构建个人博客
+Nov 14 2013 Recent Posts iOS 修改编译输出目录 用octopress构建个人博客 GitHub Repos Status updating... @ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,28 +104,8 @@ Nov 13 2013 Recent Posts iOS 修改编译输出目录 博客定制思考 &hellip
 
 <article>
   
-<h1><a href="/blog/2013/11/14/bo-ke-ding-zhi-si-kao/">博客定制思考</a></h1>
-<time datetime="2013-11-14T10:01:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>14</span> <span class='year'>2013</span></time>
-
-
-</article>
-
-
-
-<article>
-  
 <h1><a href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">用octopress构建个人博客</a></h1>
 <time datetime="2013-11-14T08:45:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>14</span> <span class='year'>2013</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">我为什么写博客</a></h1>
-<time datetime="2013-11-13T20:42:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>13</span> <span class='year'>2013</span></time>
 
 
 </article>
@@ -150,18 +128,39 @@ Nov 13 2013 Recent Posts iOS 修改编译输出目录 博客定制思考 &hellip
       </li>
     
       <li class="post">
-        <a href="/blog/2013/11/14/bo-ke-ding-zhi-si-kao/">博客定制思考</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">用octopress构建个人博客</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">我为什么写博客</a>
-      </li>
-    
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jebai0521">@jebai0521</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jebai0521',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
@@ -181,6 +180,19 @@ Nov 13 2013 Recent Posts iOS 修改编译输出目录 博客定制思考 &hellip
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'jebai';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

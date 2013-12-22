@@ -101,6 +101,9 @@
 
 <time datetime="2013-12-21T12:52:52+08:00" pubdate data-updated="true">Dec 21<span>st</span>, 2013</time>
         
+           | <a href="/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/#disqus_thread"
+             data-disqus-identifier="http://jebai.github.io/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/">Comments</a>
+        
       </p>
     
   </header>
@@ -137,42 +140,6 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/11/14/bo-ke-ding-zhi-si-kao/">博客定制思考</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-14T10:01:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>用Octopress构建了自己的博客，很简单的几个步骤就把站点部署起来了，只是</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">用octopress构建个人博客</a></h1>
     
     
@@ -190,6 +157,9 @@
 
 
 <time datetime="2013-11-14T08:45:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2013</time>
+        
+           | <a href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/#disqus_thread"
+             data-disqus-identifier="http://jebai.github.io/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">Comments</a>
         
       </p>
     
@@ -267,44 +237,6 @@ username要跟github用户名相同
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">我为什么写博客</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-13T20:42:00+08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>也许是因为遇上了github，在git上看见了许多大牛，他们都用git来构建自己干净漂亮的blog，不由自主的想要自己也弄一个这样的界面，而且git提供这样免费的空间，如要要求不是太高，也不需要为域名发愁。</p>
-
-<p>是想记录一点东西，做笔记的话，也许印象笔记足矣。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -322,18 +254,39 @@ username要跟github用户名相同
       </li>
     
       <li class="post">
-        <a href="/blog/2013/11/14/bo-ke-ding-zhi-si-kao/">博客定制思考</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">用octopress构建个人博客</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">我为什么写博客</a>
-      </li>
-    
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jebai0521">@jebai0521</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jebai0521',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
@@ -352,6 +305,19 @@ username要跟github用户名相同
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'jebai';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

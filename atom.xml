@@ -4,7 +4,7 @@
   <title><![CDATA[明陈的博客]]></title>
   <link href="http://jebai.github.io/atom.xml" rel="self"/>
   <link href="http://jebai.github.io/"/>
-  <updated>2013-12-22T14:35:58+08:00</updated>
+  <updated>2013-12-22T14:47:16+08:00</updated>
   <id>http://jebai.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -37,15 +37,6 @@
 <p>4、这样编译出来的静态库就会在工程的SRCROOT对应的目录下生成一个build目录，</p>
 
 <p><img src="http://jebai.github.io/images/2013/12/21/xcode3.jpg" title="Optional title attribute" alt="Alt text" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[博客定制思考]]></title>
-    <link href="http://jebai.github.io/blog/2013/11/14/bo-ke-ding-zhi-si-kao/"/>
-    <updated>2013-11-14T10:01:00+08:00</updated>
-    <id>http://jebai.github.io/blog/2013/11/14/bo-ke-ding-zhi-si-kao</id>
-    <content type="html"><![CDATA[<p>用Octopress构建了自己的博客，很简单的几个步骤就把站点部署起来了，只是</p>
 ]]></content>
   </entry>
   
@@ -118,17 +109,6 @@ username要跟github用户名相同
 
 <pre><code>http://username.github.io
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[我为什么写博客]]></title>
-    <link href="http://jebai.github.io/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/"/>
-    <updated>2013-11-13T20:42:00+08:00</updated>
-    <id>http://jebai.github.io/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke</id>
-    <content type="html"><![CDATA[<p>也许是因为遇上了github，在git上看见了许多大牛，他们都用git来构建自己干净漂亮的blog，不由自主的想要自己也弄一个这样的界面，而且git提供这样免费的空间，如要要求不是太高，也不需要为域名发愁。</p>
-
-<p>是想记录一点东西，做笔记的话，也许印象笔记足矣。</p>
 ]]></content>
   </entry>
   
