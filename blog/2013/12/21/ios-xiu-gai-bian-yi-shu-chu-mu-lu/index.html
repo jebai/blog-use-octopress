@@ -32,6 +32,18 @@
 
   
 
+
+	<script type="text/javascript">
+    	function addBlankTargetForLinks () {
+       		$('a[href^="http"]').each(function(){
+       			$(this).attr('target', '_blank');
+    		});
+    	}
+
+		$(document).bind('DOMNodeInserted', function(event) {
+		  	addBlankTargetForLinks();
+		});
+	</script>
 </head>
 
 <body   >
@@ -149,7 +161,7 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/" title="Previous Post: 用octopress构建个人博客">&laquo; 用octopress构建个人博客</a>
+        <a class="basic-alignment left" href="/blog/2013/11/14/bo-ke-ding-zhi-si-kao/" title="Previous Post: 博客定制思考">&laquo; 博客定制思考</a>
       
       
     </p>
@@ -169,7 +181,15 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2013/11/14/bo-ke-ding-zhi-si-kao/">博客定制思考</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">用octopress构建个人博客</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">我为什么写博客</a>
       </li>
     
   </ul>

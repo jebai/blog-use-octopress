@@ -32,6 +32,18 @@
 
   
 
+
+	<script type="text/javascript">
+    	function addBlankTargetForLinks () {
+       		$('a[href^="http"]').each(function(){
+       			$(this).attr('target', '_blank');
+    		});
+    	}
+
+		$(document).bind('DOMNodeInserted', function(event) {
+		  	addBlankTargetForLinks();
+		});
+	</script>
 </head>
 
 <body   >
@@ -113,6 +125,42 @@
 <p>4、这样编译出来的静态库就会在工程的SRCROOT对应的目录下生成一个build目录，</p>
 
 <p><img src="/images/2013/12/21/xcode3.jpg" title="Optional title attribute" alt="Alt text" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/14/bo-ke-ding-zhi-si-kao/">博客定制思考</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-14T10:01:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>用Octopress构建了自己的博客，很简单的几个步骤就把站点部署起来了，只是</p>
 </div>
   
   
@@ -219,6 +267,44 @@ username要跟github用户名相同
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">我为什么写博客</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-13T20:42:00+08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>也许是因为遇上了github，在git上看见了许多大牛，他们都用git来构建自己干净漂亮的blog，不由自主的想要自己也弄一个这样的界面，而且git提供这样免费的空间，如要要求不是太高，也不需要为域名发愁。</p>
+
+<p>是想记录一点东西，做笔记的话，也许印象笔记足矣。</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -236,7 +322,15 @@ username要跟github用户名相同
       </li>
     
       <li class="post">
+        <a href="/blog/2013/11/14/bo-ke-ding-zhi-si-kao/">博客定制思考</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">用octopress构建个人博客</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">我为什么写博客</a>
       </li>
     
   </ul>
