@@ -9,7 +9,7 @@
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="XCode5中默认的工程编译输出目录是 ~/Library/Developer/Xcode/DerivedData。 可以根据需要改变设置，使像静态库这样的编译输出文件可以方便的被找到。 1、在Xcode菜单中按如下路径打开对话框： XCode->Preferences->Locations 2、 &hellip;">
+  <meta name="description" content="XCode5中默认的工程编译输出目录是 ~/Library/Developer/Xcode/DerivedData。 在制作静态库时，不是很容易找到生成的静态库。 事实上，可以根据需要改变设置，使像静态库这样的编译输出文件可以方便的被找到。 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,7 +83,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/">iOS 修改编译输出目录</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/">XCode5 修改编译输出目录</a></h1>
     
     
       <p class="meta">
@@ -111,25 +111,16 @@
 
   <div class="entry-content"><p>XCode5中默认的工程编译输出目录是 ~/Library/Developer/Xcode/DerivedData。</p>
 
-<p>可以根据需要改变设置，使像静态库这样的编译输出文件可以方便的被找到。</p>
+<p>在制作静态库时，不是很容易找到生成的静态库。</p>
 
-<p>1、在Xcode菜单中按如下路径打开对话框：</p>
+<p>事实上，可以根据需要改变设置，使像静态库这样的编译输出文件可以方便的被找到。</p>
 
-<p>XCode->Preferences->Locations</p>
-
-<p>2、点击DerivedData的高级设置选项</p>
-
-<p><img src="/images/2013/12/21/xcode1.jpg" title="Optional title attribute" alt="Alt text" /></p>
-
-<p>3、将BuildLocation设置为Legacy</p>
-
-<p><img src="/images/2013/12/21/xcode2.jpg" title="Optional title attribute" alt="Alt text" /></p>
-
-<p>4、这样编译出来的静态库就会在工程的SRCROOT对应的目录下生成一个build目录，</p>
-
-<p><img src="/images/2013/12/21/xcode3.jpg" title="Optional title attribute" alt="Alt text" /></p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -166,70 +157,57 @@
   </header>
 
 
-  <div class="entry-content"><h4>1. 下载Octopress</h4>
+  <div class="entry-content"><p>用Octopress和Github Pages 可以很方便的构建免费的个人博客。</p>
 
-<pre><code>在准备存放仓库的目录将octopress代码下载下来&lt;br/&gt;
-`git clone git://github.com/imathis/octopress.git octopress`
-</code></pre>
+<p>按下面的步骤开始吧。</p>
 
-<h4>2. 安装依赖的组件</h4>
-
-<ul>
-<li><code>cd octopress</code></li>
-<li><code>gem install bundler</code>.
-  <a href="http://bundler.io/">了解bundler</a></li>
-<li><code>rbenv rehash</code>
-<a href="https://github.com/sstephenson/rbenv">了解rbenv</a></li>
-<li><code>bundle install</code></li>
-</ul>
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">Read on &rarr;</a>
+    </footer>
+  
 
 
-<h4>3. 安装默认的样式</h4>
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">我为什么写博客</a></h1>
+    
+    
+      <p class="meta">
+        
 
-<ul>
-<li><code>rake install</code><a href="http://rake.rubyforge.org/">了解rake</a></li>
-</ul>
 
 
-<h4>4. 在github上新建仓库</h4>
 
-<pre><code>仓库需要命名为 username.github.io.
-username要跟github用户名相同
-</code></pre>
 
-<h4>5. 在本地新建站点，同时部署站点的github信息</h4>
 
-<pre><code>`rake setup_github_pages`
-</code></pre>
 
-<h4>6. 生成站点</h4>
 
-<pre><code>`rake generate`
-</code></pre>
+  
 
-<h4>7. 创建一篇文章</h4>
 
-<pre><code>`rake new_post["first blog"]
-这样会在source/_post目录下面创建一编文章，时间开头，md结尾，Mac下可以用mou来编辑md文件。`
-</code></pre>
+<time datetime="2013-11-13T20:42:00+08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2013</time>
+        
+           | <a href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/#disqus_thread"
+             data-disqus-identifier="http://jebai.github.io/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">Comments</a>
+        
+      </p>
+    
+  </header>
 
-<p><a href="http://mouapp.com/">了解mou</a></p>
 
-<h4>8. 本地预览站点</h4>
+  <div class="entry-content"><p>也许是因为遇上了github，在github上看见了许多很厉害的人，他们都用github来构建自己干净漂亮的blog，不由自主的想要有这样的一亩三分地，来构筑自己的小屋，装修的漂漂亮亮的，记录自己的成长历程。</p>
 
-<pre><code>`rake preview`
-而后即可在浏览器中访问 http://0.0.0.0:4000
-</code></pre>
+<p>github提供这样免费的地，又有octopress这样便利的工具，如要要求不是太高，也不用申请域名，于是我便开始写这个博客了。</p>
 
-<h4>9. 部署站点</h4>
-
-<pre><code>`rake deploy`
-</code></pre>
-
-<h4>10. 访问站点</h4>
-
-<pre><code>http://username.github.io
-</code></pre>
+<p>在博客上分享一些自己学过的知识，与在笔记里记下自己备查的知识，效果是很不一样的。因为在博客上，大家都可以看得到，虚空心的驱使，我们都想把自己较好的一面展示给别人，于是在写下知识时，便会思考的更多，写出来的东西也会更有条理。不觉之中，在这些思考的过程中，自己的水平也可以得到提高。</p>
 </div>
   
   
@@ -250,11 +228,15 @@ username要跟github用户名相同
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/">iOS 修改编译输出目录</a>
+        <a href="/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/">XCode5 修改编译输出目录</a>
       </li>
     
       <li class="post">
         <a href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">用octopress构建个人博客</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">我为什么写博客</a>
       </li>
     
   </ul>
