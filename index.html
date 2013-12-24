@@ -9,7 +9,8 @@
   <meta name="author" content="明陈">
 
   
-  <meta name="description" content="XCode5中默认的工程编译输出目录是 ~/Library/Developer/Xcode/DerivedData。 在制作静态库时，不是很容易找到生成的静态库。 事实上，可以根据需要改变设置，使像静态库这样的编译输出文件可以方便的被找到。 ">
+  <meta name="description" content="官方文档
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -95,6 +96,122 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/12/24/octopress-shi-yong-codeblock/">Octopress 使用Codeblock</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-24T16:03:01+08:00" pubdate data-updated="true">Dec 24<span>th</span>, 2013</time>
+        
+           | <a href="/blog/2013/12/24/octopress-shi-yong-codeblock/#disqus_thread"
+             data-disqus-identifier="http://jebai.github.io/blog/2013/12/24/octopress-shi-yong-codeblock/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://octopress.org/docs/plugins/codeblock/">官方文档</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/24/titanium-ding-shi-qi/">Titanium 定时器</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-24T15:47:55+08:00" pubdate data-updated="true">Dec 24<span>th</span>, 2013</time>
+        
+           | <a href="/blog/2013/12/24/titanium-ding-shi-qi/#disqus_thread"
+             data-disqus-identifier="http://jebai.github.io/blog/2013/12/24/titanium-ding-shi-qi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Ti框架提供的定时器与一般语言的定时器不太一样，采用如下形式来定义</p>
+
+<h4>setTimeout 使用</h4>
+
+<figure class='code'><figcaption><span>Javascript Array Syntax</span><a href='http://j.mp/pPUUmW'>MDN Documentation </a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>   <span class="nx">toDoLater</span><span class="p">();</span>
+</span><span class='line'><span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>setInterval 使用</h4>
+
+<figure class='code'><figcaption><span>Javascript Array Syntax</span><a href='http://j.mp/pPUUmW'>MDN Documentation </a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>    <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>    <span class="nx">label</span><span class="p">.</span><span class="nx">text</span> <span class="o">=</span> <span class="s2">&quot;count: &quot;</span> <span class="o">+</span> <span class="nx">count</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">count</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://docs.appcelerator.com/titanium/latest/#!/api/Global-method-setTimeout">官方文档说明：setTimeout</a></p>
+
+<p><a href="http://docs.appcelerator.com/titanium/latest/#!/api/Global-method-setInterval">官方文档说明：setInterval</a></p>
+
+<p><a href="http://stackoverflow.com/questions/12477043/adding-timer-in-titanium-mobile-application">参考链接1</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/">XCode5 修改编译输出目录</a></h1>
     
     
@@ -171,7 +288,7 @@
 
   <div class="entry-content"><p>用Octopress和Github Pages 可以很方便的构建免费的个人博客。</p>
 
-<p>按下面的步骤开始吧。</p>
+<p>按如下步骤就可以构建一个新的博客。</p>
 
 </div>
   
@@ -239,6 +356,14 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/24/octopress-shi-yong-codeblock/">Octopress 使用Codeblock</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/24/titanium-ding-shi-qi/">Titanium 定时器</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/">XCode5 修改编译输出目录</a>

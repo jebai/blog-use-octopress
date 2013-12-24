@@ -9,8 +9,8 @@
   <meta name="author" content="明陈">
 
   
-  <meta name="description" content="用Octopress和Github Pages 可以很方便的构建免费的个人博客。 按下面的步骤开始吧。 1. 下载Octopress 在准备存放仓库的目录将octopress代码下载下来&lt;br/&gt;
-`git clone git://github.com/imathis/ &hellip;">
+  <meta name="description" content="用Octopress和Github Pages 可以很方便的构建免费的个人博客。 按如下步骤就可以构建一个新的博客。 1. 下载Octopress 在准备存放仓库的目录将octopress代码下载下来 1
+git clone git://github.com/imathis/octopress. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -121,75 +121,90 @@
 
 <div class="entry-content"><p>用Octopress和Github Pages 可以很方便的构建免费的个人博客。</p>
 
-<p>按下面的步骤开始吧。</p>
+<p>按如下步骤就可以构建一个新的博客。</p>
 
 <!--more-->
 
 
 <h4>1. 下载Octopress</h4>
 
-<pre><code>在准备存放仓库的目录将octopress代码下载下来&lt;br/&gt;
-`git clone git://github.com/imathis/octopress.git octopress`
-</code></pre>
+<p>在准备存放仓库的目录将octopress代码下载下来</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress</span></code></pre></td></tr></table></div></figure>
+
 
 <h4>2. 安装依赖的组件</h4>
 
-<ul>
-<li><code>cd octopress</code></li>
-<li><code>gem install bundler</code>.
-  <a href="http://bundler.io/">了解bundler</a></li>
-<li><code>rbenv rehash</code>
-<a href="https://github.com/sstephenson/rbenv">了解rbenv</a></li>
-<li><code>bundle install</code></li>
-</ul>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd octopress
+</span><span class='line'>gem install bundler
+</span><span class='line'>rbenv rehash
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
 
+
+<p><a href="http://bundler.io/">了解bundler</a></p>
+
+<p><a href="https://github.com/sstephenson/rbenv">了解rbenv</a></p>
 
 <h4>3. 安装默认的样式</h4>
 
-<ul>
-<li><code>rake install</code><a href="http://rake.rubyforge.org/">了解rake</a></li>
-</ul>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
 
+
+<p><a href="http://rake.rubyforge.org/">了解rake</a></p>
 
 <h4>4. 在github上新建仓库</h4>
 
-<pre><code>仓库需要命名为 username.github.io.
-username要跟github用户名相同
-</code></pre>
+<p>仓库需要命名为 username.github.io.</p>
+
+<p>username要跟github用户名相同</p>
 
 <h4>5. 在本地新建站点，同时部署站点的github信息</h4>
 
-<pre><code>`rake setup_github_pages`
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
+
 
 <h4>6. 生成站点</h4>
 
-<pre><code>`rake generate`
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
+
 
 <h4>7. 创建一篇文章</h4>
 
-<pre><code>`rake new_post["first blog"]
-这样会在source/_post目录下面创建一编文章，时间开头，md结尾，Mac下可以用mou来编辑md文件。`
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["first blog"]</span></code></pre></td></tr></table></div></figure>
 
-<p><a href="http://mouapp.com/">了解mou</a></p>
+
+<p>这样会在source/_post目录下面创建一编文章，时间开头，md结尾，Mac下可以用<a href="http://mouapp.com/" title="访问Mou官方网站">Mou</a>来编辑md文件。</p>
+
+<p>md代表是markdown格式的文件，可以被编译成html格式的文件。<a href="http://mouapp.com/" title="访问Mou官方网站">Markdown</a>正如字面意思，相对于html文件，没有那么多的标签，更符合人类的阅读习惯，易于编写。</p>
 
 <h4>8. 本地预览站点</h4>
 
-<pre><code>`rake preview`
-而后即可在浏览器中访问 http://0.0.0.0:4000
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
+
+<p>而后即可在浏览器中访问 <a href="http://0.0.0.0:4000">http://0.0.0.0:4000</a></p>
 
 <h4>9. 部署站点</h4>
 
-<pre><code>`rake deploy`
-</code></pre>
+<p>如果预览没有什么问题，马上就可以部署到github上面了，只要一条命令就可以了。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
 
 <h4>10. 访问站点</h4>
 
-<pre><code>http://username.github.io
-</code></pre>
+<p><a href="http://jebai.github.io">http://username.github.io</a></p>
 </div>
 
 
@@ -214,6 +229,12 @@ username要跟github用户名相同
 
 <time datetime="2013-11-14T08:45:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
 
 
     </p>
@@ -251,6 +272,14 @@ username要跟github用户名相同
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/24/octopress-shi-yong-codeblock/">Octopress 使用Codeblock</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/24/titanium-ding-shi-qi/">Titanium 定时器</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/12/21/ios-xiu-gai-bian-yi-shu-chu-mu-lu/">XCode5 修改编译输出目录</a>
