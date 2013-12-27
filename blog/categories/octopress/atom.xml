@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | 明陈的博客]]></title>
   <link href="http://jebai.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://jebai.github.io/"/>
-  <updated>2013-12-27T00:54:28+08:00</updated>
+  <updated>2013-12-27T10:30:17+08:00</updated>
   <id>http://jebai.github.io/</id>
   <author>
     <name><![CDATA[明陈]]></name>
@@ -39,9 +39,15 @@
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>cd octopress
-</span><span class='line'>gem install bundler
-</span><span class='line'>rbenv rehash
-</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'>sudo gem install bundler
+</span><span class='line'>sudo rbenv rehash
+</span><span class='line'>sudo bundle install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>osx 默认安装了gem，这是ruby的包管理器</p>
+
+<p>如果没有安装rbenv可以用brew来安装</p>
+
+<p>如果没有安装brew,可以参考<a href="http://blog.csdn.net/chenyi8888/article/details/7345113" title="Mac安装Brew">这篇文章</a>来安装</p>
 
 <p><a href="http://bundler.io/">了解bundler</a></p>
 

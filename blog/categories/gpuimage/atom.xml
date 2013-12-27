@@ -4,7 +4,7 @@
   <title><![CDATA[Category: GPUImage | 明陈的博客]]></title>
   <link href="http://jebai.github.io/blog/categories/gpuimage/atom.xml" rel="self"/>
   <link href="http://jebai.github.io/"/>
-  <updated>2013-12-27T00:54:28+08:00</updated>
+  <updated>2013-12-27T10:30:17+08:00</updated>
   <id>http://jebai.github.io/</id>
   <author>
     <name><![CDATA[明陈]]></name>
@@ -19,6 +19,9 @@
     <updated>2013-12-26T20:15:22+08:00</updated>
     <id>http://jebai.github.io/blog/2013/12/26/shi-yong-gpuimagegei-tu-pian-jia-shang-lu-jing</id>
     <content type="html"><![CDATA[<p>用 GPU 给图片或是在摄像头拍照时加上滤镜效果是很简单的，下面的流程演示了如何给一张图片加上滤镜效果。</p>
+
+<!--more-->
+
 
 <ul>
 <li>从源图片构造GPUImagePicture</li>
