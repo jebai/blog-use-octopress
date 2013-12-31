@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Titanium | 明陈的博客]]></title>
   <link href="http://jebai.github.io/blog/categories/titanium/atom.xml" rel="self"/>
   <link href="http://jebai.github.io/"/>
-  <updated>2014-01-01T01:11:46+08:00</updated>
+  <updated>2014-01-01T01:19:21+08:00</updated>
   <id>http://jebai.github.io/</id>
   <author>
     <name><![CDATA[明陈]]></name>
@@ -28,8 +28,44 @@
 <p>Alloy提供了一些处理平台差异的手段。</p>
 
 <ol>
-<li><p>Markup 中的platform属性</p></li>
-<li><p>对不同的平台单独写一个view文件，</p></li>
+<li><p>Markup 中的platform属性</p>
+
+<p>如下代码中，id为index的Window 只有在mobileweb上运行时才会创建，同理，id为master的 Require 只有在android环境下才会被操作。</p></li>
+</ol>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;Alloy&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>!-- Mobileweb --<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>Window id=&quot;index&quot; platform=&quot;mobileweb&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>NavigationGroup id=&quot;navgroup&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>        <span class="ni">&amp;lt;</span>Require src=&quot;master&quot; id=&quot;master&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>/NavigationGroup<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>/Window<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>!-- Android --<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>Require id=&quot;master&quot; src=&quot;master&quot; platform=&quot;android&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/Alloy&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<ol>
+<li>对不同的平台单独写一个view文件，用对应平台名称的目录包起来</li>
 </ol>
 
 
