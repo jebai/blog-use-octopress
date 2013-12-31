@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Octopress - 明陈的博客</title>
+  <title>Titanium Develop Sugar - 明陈的博客</title>
   <meta name="author" content="明陈">
 
   
-  <meta name="description" content="Category: octopress">
+  <meta name="description" content="本贴记录 Titanium 开发中的一些小经验 Titanium View 的透明 View 的透明是设计中经常用到的，有背景的透明，半透明，整体的透明，半透明等。 整体的透明度 查阅相关文档后，在所有的 View 属性中有一个不透明度的属性opacity 1
+rake generate &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jebai.github.ioblog/categories/octopress">
+  <link rel="canonical" href="http://jebai.github.io/blog/2013/12/31/titanium-develop-sugar">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="明陈的博客" type="application/atom+xml">
@@ -88,36 +89,126 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Octopress</h1>
+    
+      <h1 class="entry-title">Titanium Develop Sugar</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-31T21:58:47+08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2013</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://jebai.github.io">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><h2>本贴记录 Titanium 开发中的一些小经验</h2>
 
-  
-  <h2>2013</h2>
+<ol>
+<li><p>Titanium View 的透明</p>
 
-<article>
-  
-<h1><a href="/blog/2013/11/14/yong-octopressgou-jian-ge-ren-bo-ke/">用octopress构建个人博客</a></h1>
-<time datetime="2013-11-14T08:45:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>14</span> <span class='year'>2013</span></time>
+<p>View 的透明是设计中经常用到的，有背景的透明，半透明，整体的透明，半透明等。</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
+<ol>
+<li><p>整体的透明度</p>
+
+<p>查阅相关文档后，在所有的 View 属性中有一个不透明度的属性<a href="(http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.View-property-opacity)" title="访问官方文档">opacity</a></p></li>
+</ol>
+</li>
+</ol>
 
 
-</article>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>    在view的属性中设置opacity的值可以调整整个view的透明度
+
+2.  背景的透明
+
+    背景的透明，可以通过设置backgroundColor来值来控制。
+
+    1.  可以设置backgroundColor的值为"transparent"为使背景全透明
+
+    2.  可以设置backgroundColor的值为ARGB，通过 A 值来控制背景的透明度
+        但 Titanium 中的颜色模式并不是常规的 RGBA 模式，而是 ARGB 模式，因此在设置颜色和透明度时，需要
+</code></pre>
+
+<ol>
+<li><p>Titanium 使用导航条</p></li>
+<li><p>Titanium alloy view中处理不同平台差异的手段</p></li>
+</ol>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">明陈</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-31T21:58:47+08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jebai.github.io/blog/2013/12/31/titanium-develop-sugar/" data-via="" data-counturl="http://jebai.github.io/blog/2013/12/31/titanium-develop-sugar/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/12/30/ios-uicollectionview/" title="Previous Post: iOS UICollectionView">&laquo; iOS UICollectionView</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/12/31/titanium-view-transparency/" title="Next Post: Titanium View Transparency">Titanium View Transparency &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -215,7 +306,10 @@
       var disqus_shortname = 'jebai';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://jebai.github.io/blog/2013/12/31/titanium-develop-sugar/';
+        var disqus_url = 'http://jebai.github.io/blog/2013/12/31/titanium-develop-sugar/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

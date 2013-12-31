@@ -4,7 +4,7 @@
   <title><![CDATA[明陈的博客]]></title>
   <link href="http://jebai.github.io/atom.xml" rel="self"/>
   <link href="http://jebai.github.io/"/>
-  <updated>2013-12-27T10:30:17+08:00</updated>
+  <updated>2014-01-01T00:36:08+08:00</updated>
   <id>http://jebai.github.io/</id>
   <author>
     <name><![CDATA[明陈]]></name>
@@ -12,6 +12,207 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Titanium View Transparency]]></title>
+    <link href="http://jebai.github.io/blog/2013/12/31/titanium-view-transparency/"/>
+    <updated>2013-12-31T22:31:26+08:00</updated>
+    <id>http://jebai.github.io/blog/2013/12/31/titanium-view-transparency</id>
+    <content type="html"><![CDATA[<h3>View 的透明是设计中经常用到的，有背景的透明，半透明，整体的透明，半透明等。</h3>
+
+<p>如下代码是默认的alloy工程中的，创建了一个 Label。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;Alloy&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;Window</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;Label</span> <span class="na">id=</span><span class="s">&quot;label&quot;</span> <span class="na">onClick=</span><span class="s">&quot;doClick&quot;</span><span class="nt">&gt;</span>Hello, World<span class="nt">&lt;/Label&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/Window&gt;</span>
+</span><span class='line'><span class="nt">&lt;/Alloy&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="s2">&quot;.container&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">backgroundColor</span><span class="o">:</span><span class="s2">&quot;white&quot;</span><span class="o">,</span>
+</span><span class='line'>  <span class="n">backgroundImage</span><span class="o">:</span> <span class="s2">&quot;/images/bg.jpg&quot;</span>
+</span><span class='line'><span class="p">}</span><span class="o">,</span>
+</span><span class='line'>
+</span><span class='line'><span class="s2">&quot;Label&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="s2">&quot;#000&quot;</span><span class="o">,</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://jebai.github.io/images/2013/12/31/1.png" width="240" height="360"></p>
+
+<h3>给 Label 设置背景颜色</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="s2">&quot;Label&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="s2">&quot;#000&quot;</span><span class="o">,</span>
+</span><span class='line'>  <span class="n">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="o">,</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://jebai.github.io/images/2013/12/31/2.png" width="240" height="360"></p>
+
+<h3>设置整体的透明度</h3>
+
+<p>查阅相关文档后，在 View 属性中有一个不透明度的属性<a href="(http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.View-property-opacity)" title="访问官方文档">opacity</a></p>
+
+<p>设置opacity的值可以调整整个view的透明度，默认值为1，有效取值区间为0~1</p>
+
+<p>值为1时，即完全不透明，为0时，即完全透明</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="s2">&quot;Label&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="s2">&quot;#000&quot;</span><span class="o">,</span>
+</span><span class='line'>  <span class="n">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="o">,</span>
+</span><span class='line'>  <span class="k">opacity</span><span class="o">:</span> <span class="s1">&#39;.5&#39;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://jebai.github.io/images/2013/12/31/3.png" width="240" height="360" title="'opacity=.1'" >
+<img src="http://jebai.github.io/images/2013/12/31/4.png" width="240" height="360" title="'opacity=.5'" >
+<img src="http://jebai.github.io/images/2013/12/31/5.png" width="240" height="360" title="'opacity=.9'" ></p>
+
+<h3>背景的透明</h3>
+
+<p>背景的透明，可以通过设置backgroundColor来值来控制。</p>
+
+<p>可以设置backgroundColor的值为&#8221;transparent&#8221;为使背景全透明</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="s2">&quot;Label&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="s2">&quot;#000&quot;</span><span class="o">,</span>
+</span><span class='line'>  <span class="n">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;transparent&#39;</span><span class="o">,</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://jebai.github.io/images/2013/12/31/6.png" width="240" height="360" title="'backgroundColor值为transparent'" ></p>
+
+<p>可以设置backgroundColor的值为来达到背景半透明的效果，并且不影响前景</p>
+
+<p>颜色格式是 ARGB，A 的值控制不透明的程度</p>
+
+<p>下面的背景颜色值中从左到到右，8F即为 A，FF 为 R，第一个 00 为 G 值，第二个 00 为 B 值</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="s2">&quot;Label&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="s2">&quot;#000&quot;</span><span class="o">,</span>
+</span><span class='line'>  <span class="n">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;#8FFF0000&#39;</span><span class="o">,</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://jebai.github.io/images/2013/12/31/7.png" width="240" height="360" title="'backgroundColor值为transparent'" ></p>
+
+<p>不得不吐槽的是，Titanium 中的颜色模式并不是常规的 RGBA 模式，而是 ARGB 模式，因此在设置颜色和透明度时，需要把透明度设置在开始的位置。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Titanium Develop Sugar]]></title>
+    <link href="http://jebai.github.io/blog/2013/12/31/titanium-develop-sugar/"/>
+    <updated>2013-12-31T21:58:47+08:00</updated>
+    <id>http://jebai.github.io/blog/2013/12/31/titanium-develop-sugar</id>
+    <content type="html"><![CDATA[<h2>本贴记录 Titanium 开发中的一些小经验</h2>
+
+<ol>
+<li><p>Titanium View 的透明</p>
+
+<p>View 的透明是设计中经常用到的，有背景的透明，半透明，整体的透明，半透明等。</p>
+
+<ol>
+<li><p>整体的透明度</p>
+
+<p>查阅相关文档后，在所有的 View 属性中有一个不透明度的属性<a href="(http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.View-property-opacity)" title="访问官方文档">opacity</a></p></li>
+</ol>
+</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>    在view的属性中设置opacity的值可以调整整个view的透明度
+
+2.  背景的透明
+
+    背景的透明，可以通过设置backgroundColor来值来控制。
+
+    1.  可以设置backgroundColor的值为"transparent"为使背景全透明
+
+    2.  可以设置backgroundColor的值为ARGB，通过 A 值来控制背景的透明度
+        但 Titanium 中的颜色模式并不是常规的 RGBA 模式，而是 ARGB 模式，因此在设置颜色和透明度时，需要
+</code></pre>
+
+<ol>
+<li><p>Titanium 使用导航条</p></li>
+<li><p>Titanium alloy view中处理不同平台差异的手段</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS UICollectionView]]></title>
+    <link href="http://jebai.github.io/blog/2013/12/30/ios-uicollectionview/"/>
+    <updated>2013-12-30T12:06:29+08:00</updated>
+    <id>http://jebai.github.io/blog/2013/12/30/ios-uicollectionview</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[使用GPUImage给图片加上滤镜]]></title>

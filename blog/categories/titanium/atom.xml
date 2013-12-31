@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Titanium | 明陈的博客]]></title>
+  <link href="http://jebai.github.io/blog/categories/titanium/atom.xml" rel="self"/>
+  <link href="http://jebai.github.io/"/>
+  <updated>2014-01-01T00:36:08+08:00</updated>
+  <id>http://jebai.github.io/</id>
+  <author>
+    <name><![CDATA[明陈]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Titanium View Transparency]]></title>
+    <link href="http://jebai.github.io/blog/2013/12/31/titanium-view-transparency/"/>
+    <updated>2013-12-31T22:31:26+08:00</updated>
+    <id>http://jebai.github.io/blog/2013/12/31/titanium-view-transparency</id>
+    <content type="html"><![CDATA[<h3>View 的透明是设计中经常用到的，有背景的透明，半透明，整体的透明，半透明等。</h3>
+
+<p>如下代码是默认的alloy工程中的，创建了一个 Label。</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;Alloy&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>Window class=&quot;container&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>Label id=&quot;label&quot; onClick=&quot;doClick&quot;<span class="ni">&amp;gt;</span>Hello, World<span class="ni">&amp;lt;</span>/Label<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>/Window<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/Alloy&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&amp;</span><span class="nt">ldquo</span><span class="o">;</span><span class="nc">.container</span><span class="o">&amp;</span><span class="nt">rdquo</span><span class="o">;:</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">backgroundColor</span><span class="o">:</span><span class="s2">&quot;white&quot;</span><span class="o">,</span>
+</span><span class='line'><span class="n">backgroundImage</span><span class="o">:</span> <span class="s2">&quot;/images/bg.jpg&quot;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">,&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;&amp;</span><span class="nt">ldquo</span><span class="o">;</span><span class="nt">Label</span><span class="o">&amp;</span><span class="nt">rdquo</span><span class="o">;:</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'><span class="k">height</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'><span class="k">color</span><span class="o">:</span> <span class="s2">&quot;#000&quot;</span><span class="o">,</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/2013/12/31/1.png" width="240" height="360"></p>
+
+<h3>给 Label 设置背景颜色</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&amp;</span><span class="nt">ldquo</span><span class="o">;</span><span class="nt">Label</span><span class="o">&amp;</span><span class="nt">rdquo</span><span class="o">;:</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'><span class="k">height</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'><span class="k">color</span><span class="o">:</span> <span class="s2">&quot;#000&quot;</span><span class="o">,</span>
+</span><span class='line'><span class="n">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="o">,</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/2013/12/31/2.png" width="240" height="360"></p>
+
+<h3>设置整体的透明度</h3>
+
+<p>查阅相关文档后，在 View 属性中有一个不透明度的属性<a href="(http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.View-property-opacity)" title="访问官方文档">opacity</a></p>
+
+<p>设置opacity的值可以调整整个view的透明度，默认值为1，有效取值区间为0~1</p>
+
+<p>值为1时，即完全不透明，为0时，即完全透明</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&amp;</span><span class="nt">ldquo</span><span class="o">;</span><span class="nt">Label</span><span class="o">&amp;</span><span class="nt">rdquo</span><span class="o">;:</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'><span class="k">height</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'><span class="k">color</span><span class="o">:</span> <span class="s2">&quot;#000&quot;</span><span class="o">,</span>
+</span><span class='line'><span class="n">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="o">,</span>
+</span><span class='line'><span class="k">opacity</span><span class="o">:</span> <span class="s1">&#39;.5&#39;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/2013/12/31/3.png" width="240" height="360" title="&lsquo;opacity=.1&rsquo;" >
+<img src="/images/2013/12/31/4.png" width="240" height="360" title="&lsquo;opacity=.5&rsquo;" >
+<img src="/images/2013/12/31/5.png" width="240" height="360" title="&lsquo;opacity=.9&rsquo;" ></p>
+
+<h3>背景的透明</h3>
+
+<p>背景的透明，可以通过设置backgroundColor来值来控制。</p>
+
+<p>可以设置backgroundColor的值为"transparent"为使背景全透明</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&amp;</span><span class="nt">ldquo</span><span class="o">;</span><span class="nt">Label</span><span class="o">&amp;</span><span class="nt">rdquo</span><span class="o">;:</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'><span class="k">height</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'><span class="k">color</span><span class="o">:</span> <span class="s2">&quot;#000&quot;</span><span class="o">,</span>
+</span><span class='line'><span class="n">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;transparent&#39;</span><span class="o">,</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/2013/12/31/6.png" width="240" height="360" title="&lsquo;backgroundColor值为transparent&rsquo;" ></p>
+
+<p>可以设置backgroundColor的值为来达到背景半透明的效果，并且不影响前景</p>
+
+<p>颜色格式是 ARGB，A 的值控制不透明的程度</p>
+
+<p>下面的背景颜色值中从左到到右，8F即为 A，FF 为 R，第一个 00 为 G 值，第二个 00 为 B 值</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&amp;</span><span class="nt">ldquo</span><span class="o">;</span><span class="nt">Label</span><span class="o">&amp;</span><span class="nt">rdquo</span><span class="o">;:</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'><span class="k">height</span><span class="o">:</span> <span class="n">Ti</span><span class="o">.</span><span class="n">UI</span><span class="o">.</span><span class="n">SIZE</span><span class="o">,</span>
+</span><span class='line'><span class="k">color</span><span class="o">:</span> <span class="s2">&quot;#000&quot;</span><span class="o">,</span>
+</span><span class='line'><span class="n">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;#8FFF0000&#39;</span><span class="o">,</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/2013/12/31/7.png" width="240" height="360" title="&lsquo;backgroundColor值为transparent&rsquo;" ></p>
+
+<p>不得不吐槽的是，Titanium 中的颜色模式并不是常规的 RGBA 模式，而是 ARGB 模式，因此在设置颜色和透明度时，需要把透明度设置在开始的位置。</p>
+]]></content>
+  </entry>
+  
+</feed>
