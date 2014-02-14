@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>iOS UICollectionView - 明陈的博客</title>
+  <title>Titanium iOS Module Use OpenCV - 明陈的博客</title>
   <meta name="author" content="明陈">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="libc++ 与 stdlibc++ Titanium 生成的 iOS 默认使用的c++库是libstdc++，其中的一些第三方组件及静态库也是依赖libstdc++ OpenCV iOS 版本发布的默认使用的c++库是libc++ 在默认情况下，如果在module中链接opencv2. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jebai.github.io/blog/2013/12/30/ios-uicollectionview">
+  <link rel="canonical" href="http://jebai.github.io/blog/2014/01/03/titanium-module-use-opencv">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="明陈的博客" type="application/atom+xml">
@@ -93,7 +92,7 @@
   
   <header>
     
-      <h1 class="entry-title">iOS UICollectionView</h1>
+      <h1 class="entry-title">Titanium iOS Module Use OpenCV</h1>
     
     
       <p class="meta">
@@ -109,7 +108,7 @@
   
 
 
-<time datetime="2013-12-30T12:06:29+08:00" pubdate data-updated="true">Dec 30<span>th</span>, 2013</time>
+<time datetime="2014-01-03T13:02:14+08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://jebai.github.io">Comments</a>
@@ -119,7 +118,47 @@
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><h2>libc++ 与 stdlibc++</h2>
+
+<p>Titanium 生成的 iOS 默认使用的c++库是libstdc++，其中的一些第三方组件及静态库也是依赖libstdc++</p>
+
+<p>OpenCV iOS 版本发布的默认使用的c++库是libc++</p>
+
+<p>在默认情况下，如果在module中链接opencv2.framework的话，使用的C++库就要修改成libc++，否则会编译不过。</p>
+
+<p>但是这个module在集成到titanium app中后，会生成编译错误，显示module中的opencv的大量std::符号无法找到.</p>
+
+<p>原因是因为titanium app使用的是libstdc++，module中的opencv依赖的libc++无法链接。</p>
+
+<p>如果把app依赖的libstdc++改成libc++，就不会出现opencv的编译错误，但是会显示另外一些titanium组件中依赖的std::符号无法找到，因为这些组件依赖的是libstdc++.</p>
+
+<p><a href="http://blog.csdn.net/hamasn/article/details/8551895" title="访问原地址">关于Undefined symbols for architecture armv7静态库引用的问题</a></p>
+
+<p>解决方案就是 <strong>重新编译opencv2.framework, 调整opencv2使用的stdlib为libstdc++</strong> .</p>
+
+<p>参考链接：<a href="http://stackoverflow.com/questions/15855894/opencv-2-4-3-with-libstdc-for-ios" title="访问原地址">OpenCV 2.4.3+ with libstdc++ for iOS?</a></p>
+
+<p>可以在<a href="https://github.com/Itseez/opencv/releases" title="去下载">github</a>上下载到源码，参考上面的链接下重新编译opencv.</p>
+
+<p>关于多个版本的stl的讨论 <a href="http://www.cnblogs.com/baiyanhuang/archive/2011/07/10/2102484.html" title="访问原地址">不要在公共接口中传递STL容器</a></p>
+
+<p>关于libstdc++与c++:</p>
+
+<ul>
+<li><p>libstdc++是 GNU 社区维护的一套C++标准库，用gcc/g++序列编译器生成，在linux上广泛应用。</p></li>
+<li><p>libc++是苹果公司开发的一套支持C++11的C++库，目前主要是在macosx/ios上面使用，用的编译器是clang/clang++.使用的面较之于libstdc++较窄。</p></li>
+</ul>
+
+
+<h2>titanium中使用自定义framework</h2>
+
+<p>titanium对于iOS会最终生成一个XCode工程。一般情况下，开发者无法干预工程的配置文件。</p>
+
+<p>对于原生的module，有一个modules.xconfig文件来维护module依赖的framework,根据规范写到这个配置文件里，就可以解决自写义module的依赖问题。</p>
+
+<p>这对于iOS SDK 提供的framework来说是没有问题，但是如果依赖了某些自定义的第三方framework，就不太好配置了，因为XCode的限制，自定义的framework只能手动的指定路径，无法放入共享路径中。</p>
+
+<p>其实只要在 OTHER_LDFLAGS 中带上 -F &lsquo;Path to framework&#8217;就可以了</p>
 </div>
 
 
@@ -142,7 +181,7 @@
   
 
 
-<time datetime="2013-12-30T12:06:29+08:00" pubdate data-updated="true">Dec 30<span>th</span>, 2013</time>
+<time datetime="2014-01-03T13:02:14+08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2014</time>
       
 
 
@@ -150,7 +189,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jebai.github.io/blog/2013/12/30/ios-uicollectionview/" data-via="" data-counturl="http://jebai.github.io/blog/2013/12/30/ios-uicollectionview/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jebai.github.io/blog/2014/01/03/titanium-module-use-opencv/" data-via="" data-counturl="http://jebai.github.io/blog/2014/01/03/titanium-module-use-opencv/" >Tweet</a>
   
   
   
@@ -159,10 +198,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/12/26/shi-yong-gpuimagegei-tu-pian-jia-shang-lu-jing/" title="Previous Post: 使用GPUImage给图片加上滤镜">&laquo; 使用GPUImage给图片加上滤镜</a>
+        <a class="basic-alignment left" href="/blog/2014/01/01/titanium-alloy-chu-li-ping-tai-chai-yi/" title="Previous Post: Titanium Alloy 处理平台差异">&laquo; Titanium Alloy 处理平台差异</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/12/31/titanium-view-transparency/" title="Next Post: Titanium View Transparency">Titanium View Transparency &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/02/14/beeframework-an-zhuang/" title="Next Post: BeeFramework 安装">BeeFramework 安装 &raquo;</a>
       
     </p>
   </footer>
@@ -271,8 +310,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://jebai.github.io/blog/2013/12/30/ios-uicollectionview/';
-        var disqus_url = 'http://jebai.github.io/blog/2013/12/30/ios-uicollectionview/';
+        var disqus_identifier = 'http://jebai.github.io/blog/2014/01/03/titanium-module-use-opencv/';
+        var disqus_url = 'http://jebai.github.io/blog/2014/01/03/titanium-module-use-opencv/';
         var disqus_script = 'embed.js';
       
     (function () {

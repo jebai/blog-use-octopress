@@ -9,7 +9,8 @@
   <meta name="author" content="明陈">
 
   
-  <meta name="description" content="不用 Alloy 时，对于平台的差异，比如在iOS中使用的导航条，在安卓中就没办法使用，需要另外处理。这样的场景基本只有在js中用if……else……搞定(虽然可以写的比较隐蔽，但终归还是要写)。 ">
+  <meta name="description" content="BeeFramework 升级到0.5.0后没有提供xcode模板，手动安装到工程比较麻烦（我没有成功过），推荐使用Pod方式来安装。 从新建一个工程，到成功引用BeeFramework，大概需要以下几个步骤； 新建空白的 iOS Empty Applicaton 工程
+在工程中创建Podfile &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,6 +90,179 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/14/beeframework-an-zhuang/">BeeFramework 安装</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-14T17:45:45+08:00" pubdate data-updated="true">Feb 14<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/02/14/beeframework-an-zhuang/#disqus_thread"
+             data-disqus-identifier="http://jebai.github.io/blog/2014/02/14/beeframework-an-zhuang/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>BeeFramework 升级到0.5.0后没有提供xcode模板，手动安装到工程比较麻烦（我没有成功过），推荐使用Pod方式来安装。</p>
+
+<p>从新建一个工程，到成功引用BeeFramework，大概需要以下几个步骤；</p>
+
+<ul>
+<li><p>新建空白的 iOS Empty Applicaton 工程</p></li>
+<li><p>在工程中创建Podfile，并配置BeeFramework</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'>  platfrom :ios
+</span><span class='line'>  pod &#39;BeeFramework&#39;
+</span><span class='line'>  
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>执行pod install</p></li>
+<li><p>创建软链接</p>
+
+<p>pod安装后生成的工程中，自动添加libPods路径为主工程的build目录中，</p>
+
+<p><img src="/images/2014/2/14/2.png" title="'opacity=.9'" ></p>
+
+<p>但Pods工程的编辑输出在另一个目录</p>
+
+<p><img src="/images/2014/2/14/1.png" title="'opacity=.9'" ></p>
+
+<p>可以通过添加软链接来解决问题</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sencloudtekiMacBook-Pro:Bee01 mingchen$ pwd
+</span><span class='line'>/Users/mingchen/Desktop/Bee01
+</span><span class='line'>sencloudtekiMacBook-Pro:Bee01 mingchen$ cd build/Debug-iphoneos/
+</span><span class='line'>sencloudtekiMacBook-Pro:Debug-iphoneos mingchen$ ln -s ../../Pods/build/Debug-iphoneos/libPods.a libPods.a 
+</span><span class='line'>sencloudtekiMacBook-Pro:Debug-iphoneos mingchen$</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>添加Bee提供的bundle到主工程中</p>
+
+<p><img src="/images/2014/2/14/4.png" title="'opacity=.9'" ></p>
+
+<p>这样开发态的一些网格，线框图图标就可以展示出来了</p></li>
+<li><p>Done</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/03/titanium-module-use-opencv/">Titanium iOS Module Use OpenCV</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-03T13:02:14+08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2014</time>
+        
+           | <a href="/blog/2014/01/03/titanium-module-use-opencv/#disqus_thread"
+             data-disqus-identifier="http://jebai.github.io/blog/2014/01/03/titanium-module-use-opencv/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>libc++ 与 stdlibc++</h2>
+
+<p>Titanium 生成的 iOS 默认使用的c++库是libstdc++，其中的一些第三方组件及静态库也是依赖libstdc++</p>
+
+<p>OpenCV iOS 版本发布的默认使用的c++库是libc++</p>
+
+<p>在默认情况下，如果在module中链接opencv2.framework的话，使用的C++库就要修改成libc++，否则会编译不过。</p>
+
+<p>但是这个module在集成到titanium app中后，会生成编译错误，显示module中的opencv的大量std::符号无法找到.</p>
+
+<p>原因是因为titanium app使用的是libstdc++，module中的opencv依赖的libc++无法链接。</p>
+
+<p>如果把app依赖的libstdc++改成libc++，就不会出现opencv的编译错误，但是会显示另外一些titanium组件中依赖的std::符号无法找到，因为这些组件依赖的是libstdc++.</p>
+
+<p><a href="http://blog.csdn.net/hamasn/article/details/8551895" title="访问原地址">关于Undefined symbols for architecture armv7静态库引用的问题</a></p>
+
+<p>解决方案就是 <strong>重新编译opencv2.framework, 调整opencv2使用的stdlib为libstdc++</strong> .</p>
+
+<p>参考链接：<a href="http://stackoverflow.com/questions/15855894/opencv-2-4-3-with-libstdc-for-ios" title="访问原地址">OpenCV 2.4.3+ with libstdc++ for iOS?</a></p>
+
+<p>可以在<a href="https://github.com/Itseez/opencv/releases" title="去下载">github</a>上下载到源码，参考上面的链接下重新编译opencv.</p>
+
+<p>关于多个版本的stl的讨论 <a href="http://www.cnblogs.com/baiyanhuang/archive/2011/07/10/2102484.html" title="访问原地址">不要在公共接口中传递STL容器</a></p>
+
+<p>关于libstdc++与c++:</p>
+
+<ul>
+<li><p>libstdc++是 GNU 社区维护的一套C++标准库，用gcc/g++序列编译器生成，在linux上广泛应用。</p></li>
+<li><p>libc++是苹果公司开发的一套支持C++11的C++库，目前主要是在macosx/ios上面使用，用的编译器是clang/clang++.使用的面较之于libstdc++较窄。</p></li>
+</ul>
+
+
+<h2>titanium中使用自定义framework</h2>
+
+<p>titanium对于iOS会最终生成一个XCode工程。一般情况下，开发者无法干预工程的配置文件。</p>
+
+<p>对于原生的module，有一个modules.xconfig文件来维护module依赖的framework,根据规范写到这个配置文件里，就可以解决自写义module的依赖问题。</p>
+
+<p>这对于iOS SDK 提供的framework来说是没有问题，但是如果依赖了某些自定义的第三方framework，就不太好配置了，因为XCode的限制，自定义的framework只能手动的指定路径，无法放入共享路径中。</p>
+
+<p>其实只要在 OTHER_LDFLAGS 中带上 -F &lsquo;Path to framework&#8217;就可以了</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -438,51 +612,9 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">我为什么写博客</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-13T20:42:00+08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2013</time>
-        
-           | <a href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/#disqus_thread"
-             data-disqus-identifier="http://jebai.github.io/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>也许是因为遇上了github，在github上看见了许多很厉害的人，他们都用github来构建自己干净漂亮的blog，不由自主的也想要有这样的一亩三分地，来构筑自己的小屋，装修的漂漂亮亮的，记录自己的成长历程。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/11/13/wo-wei-shi-yao-xie-bo-ke/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -495,6 +627,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/14/beeframework-an-zhuang/">BeeFramework 安装</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/03/titanium-module-use-opencv/">Titanium iOS Module Use OpenCV</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/01/titanium-alloy-chu-li-ping-tai-chai-yi/">Titanium Alloy 处理平台差异</a>
       </li>
     
@@ -504,14 +644,6 @@
     
       <li class="post">
         <a href="/blog/2013/12/30/ios-uicollectionview/">iOS UICollectionView</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/26/shi-yong-gpuimagegei-tu-pian-jia-shang-lu-jing/">使用GPUImage给图片加上滤镜</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/24/octopress-shi-yong-codeblock/">Octopress 使用Codeblock</a>
       </li>
     
   </ul>
